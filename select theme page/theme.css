@@ -1,0 +1,6 @@
+body {
+    background-image: url(/imagens/hangman.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    filter: blur(100px);
+}
