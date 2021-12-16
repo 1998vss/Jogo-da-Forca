@@ -4,3 +4,11 @@ body {
     background-repeat: no-repeat;
     filter: blur(100px);
 }
+
+div.themePicture {
+    background-color: blue;
+}
+
+#container {
+    text-align: center;
+}
