@@ -2,13 +2,14 @@ body {
     background-image: url(/imagens/hangman.gif);
     background-size: 100%;
     background-repeat: no-repeat;
-    filter: blur(100px);
 }
 
-div.themePicture {
-    background-color: blue;
-}
-
-#container {
+#vocabularyTitle {
+    margin: auto;
+    width: 58%;
+    height: 10%;
     text-align: center;
+    font-size: 72px;
+    letter-spacing: 30px;
+    font-family: 'Ribeye Marrow', cursive;
 }
