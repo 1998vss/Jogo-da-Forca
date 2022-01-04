@@ -26,15 +26,15 @@ function keepSelected3() {
 function GoToPage(){
     if (animals) {
         console.log("animals")
-        location.href = "/Animals page/animals.html"
+        window.location.href = "/Animals page/animals.html"
     }
     else if (work) {
         console.log("work")
-        location.href = "/error.html"
+        window.location.href = "/error.html"
     }
     else if (bed) {
         console.log("bed")
-        location.href = "/error.html"
+        window.location.href = "/error.html"
     }
 }
 // ao clicar na imagem, executar função
