@@ -25,15 +25,12 @@ function keepSelected3() {
 
 function GoToPage(){
     if (animals) {
-        console.log("animals")
         window.location.href = "/Animals page/animals.html"
     }
     else if (work) {
-        console.log("work")
         window.location.href = "/error.html"
     }
     else if (bed) {
-        console.log("bed")
         window.location.href = "/error.html"
     }
 }

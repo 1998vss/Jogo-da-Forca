@@ -13,10 +13,12 @@ body {
     font-family: 'Ribeye', cursive;
     letter-spacing: 70px;
     top: 7%;
+    font-weight: 100;
 }
 
 #initialTitleHang {
     color:#B70A0A;
+    font-weight: 100;
 }
 
 #initialTitleMan {

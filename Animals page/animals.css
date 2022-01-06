@@ -1,0 +1,57 @@
+#initialTitle {
+    font-size: 72px;
+    text-align: center;
+    margin: 0;
+    font-family: 'Ribeye', cursive;
+    letter-spacing: 30px;
+    top: 2%;
+    font-weight: 100;
+}
+
+#initialTitleHang {
+    color:#880808;
+    font-weight: 100;
+}
+
+#initialTitleMan {
+    color: #1E0C1D;
+}
+
+#containerConsonant {
+    font-family: 'Reenie Beanie', cursive;
+    display: flex;
+    font-size: 64px;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#containerVowel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Rochester', cursive;
+    font-size: 64px;
+}
+
+#primerDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 97vh;
+    width: 100%;
+    column-gap: 50px;
+    row-gap: 50px;
+}
+
+#z {
+    color: #ff0000;
+}
+
+#e {
+    color: #00ff00;
+}
+
+#forca {
+    transform: scale(0.49);
+}
