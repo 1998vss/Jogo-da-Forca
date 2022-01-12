@@ -6,6 +6,7 @@
     letter-spacing: 30px;
     top: 2%;
     font-weight: 100;
+    grid-area: title;
 }
 
 #initialTitleHang {
@@ -24,6 +25,7 @@
     width: 100%;
     justify-content: space-evenly;
     flex-direction: row;
+    grid-area: consonant;
 }
 
 #containerVowel {
@@ -32,16 +34,23 @@
     justify-content: center;
     font-family: 'Rochester', cursive;
     font-size: 64px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-area: vowel;
 }
 
 #primerDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas: 
+    'title title'
+    'forca letters'
+    'vowel vowel'
+    'consonant consonant';
+    justify-content: space-evenly;
     height: 97vh;
     width: 100%;
-    column-gap: 50px;
-    row-gap: 50px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 49% 10% 12.5%;
 }
 
 #z {
@@ -54,5 +63,11 @@
 
 #forca {
     width: 10%;
-    
+    grid-area: forca;
 }
+
+#divText {
+    grid-area: letters;
+    justify-content: center;
+}
+
