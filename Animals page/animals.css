@@ -4,7 +4,7 @@
     margin: 0;
     font-family: 'Ribeye', cursive;
     letter-spacing: 30px;
-    top: 2%;
+    top: 3%;
     font-weight: 100;
     grid-area: title;
 }
@@ -20,7 +20,8 @@
 
 #containerConsonant {
     font-family: 'Reenie Beanie', cursive;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     font-size: 64px;
     width: 100%;
     justify-content: space-evenly;
@@ -29,14 +30,15 @@
 }
 
 #containerVowel {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 30px;
     font-family: 'Rochester', cursive;
     font-size: 64px;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-area: vowel;
+    margin: auto;
 }
 
 #primerDiv {
@@ -49,8 +51,10 @@
     justify-content: space-evenly;
     height: 97vh;
     width: 100%;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 49% 10% 12.5%;
+    grid-template-columns: 49.9% 49.9%;
+    grid-template-rows: 13.6% 49% 10% 12.5%;
+    position: relative;
+    row-gap: 31px;
 }
 
 #z {
@@ -62,12 +66,30 @@
 }
 
 #forca {
-    width: 10%;
+    width: 20%;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#divForca {
+    display: flex;
+    justify-content: center;
     grid-area: forca;
 }
 
-#divText {
+#divTexto {
     grid-area: letters;
-    justify-content: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.letterContainer {
+    width: 60px;
+    height: 100px;
+    border-bottom: 2px solid black;
+    display: block;
 }
 
