@@ -93,3 +93,15 @@
     display: block;
 }
 
+#divTexto span {
+    position: relative;
+    right: 100px;
+}
+
+.body {
+    position: absolute;
+    left: 315px;
+    top: 195px;
+    width: 8%;
+    display: none;
+}

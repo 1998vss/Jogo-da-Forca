@@ -20,6 +20,7 @@ function letterClick(letter) {
       clickedLettersRight.push(letter)
   } else {
     clickedLettersWrong.push(letter)
+    document.getElementById("head").style.display = "block"
   }
 }
 
