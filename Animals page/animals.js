@@ -13,6 +13,10 @@ window.onload =  function startGame() {
     }
 }
 
+function gameOver() {
+  window.location.href = "/Game Over/gameover.html"
+}
+
 function letterClick(letter) {
   if (chosenWord.includes(letter)) {
       let letterIndex = chosenWord.indexOf(letter);
@@ -20,7 +24,26 @@ function letterClick(letter) {
       clickedLettersRight.push(letter)
   } else {
     clickedLettersWrong.push(letter)
-    document.getElementById("head").style.display = "block"
+    switch (clickedLettersWrong.length) {
+      case 1:
+        document.getElementById("head").style.display = "block";
+      break;
+      case 2:
+        document.getElementById("torso").style.display = "block";
+      break;
+      case 3:
+        document.getElementById("rightArm").style.display = "block";
+      break;
+      case 4:
+        document.getElementById("leftArm").style.display = "block";
+      break;
+      case 5:
+        document.getElementById("rightLeg").style.display = "block";
+      break;
+      case 6:
+        document.getElementById("leftLeg").style.display = "block";
+        gameOver()
+    }
   }
 }
 
