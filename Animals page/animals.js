@@ -1,52 +1,80 @@
-var animals = ["dog", "cat", "hippo", "rhino", "zebra", "elephant"]
+var animals = ["dog", "cat", "hippo", "rhino", "zebra", "elephant"];
 let rng = Math.floor(Math.random()*animals.length);
 let chosenWord = animals[rng];
 let clickedLettersRight = [];
 let clickedLettersWrong = [];
+let repeatedIndexes = [];
 
 window.onload =  function startGame() {
-  for (let i = 0; i < animals[rng].length; i++) {
-    let wordContainer = `<span id="${"letter-"+i}" class="letterContainer"></span>`;
-    clickedLettersRight = []
-    clickedLettersWrong = []
+  for (let k = 0; k < animals[rng].length; k++) {
+    let wordContainer = `<span id="${"letter-"+k}" class="letterContainer"></span>`;
+    clickedLettersRight = [];
+    clickedLettersWrong = [];
     document.getElementById("divTexto").innerHTML += wordContainer;
-    console.log(wordContainer);
-    console.log(clickedLettersRight)
-}
+    // console.log(wordContainer);
+    // console.log(clickedLettersRight);
+    for (let i = 0; i < chosenWord.length; i++) {
+      for (j = 0; j < chosenWord.length; j++); {
+        if (i !== j) {
+          if (chosenWord[i] == chosenWord[j]) {
+                  repeatedIndexes.push(i);
+                  console.log(repeatedIndexes)
+          }
+        }
+      }   
+    }
+  }
 }
 
 function reset() {
-  document.getElementById("divTexto").innerHTML = ""
+  document.getElementById("divTexto").innerHTML = "";
   rng = Math.floor(Math.random()*animals.length);
   chosenWord = animals[rng];
-  clickedLettersRight = []
-  clickedLettersWrong = []
-  console.log(animals[rng])
-  for (let i = 0; i < animals[rng].length; i++) {
-    let wordContainer = `<span id="${"letter-"+i}" class="letterContainer"></span>`;
+  clickedLettersRight = [];
+  clickedLettersWrong = [];
+  // console.log(animals[rng]);
+  for (let k = 0; k < animals[rng].length; k++) {
+    let wordContainer = `<span id="${"letter-"+k}" class="letterContainer"></span>`;
     document.getElementById("divTexto").innerHTML += wordContainer;
-    console.log(wordContainer);
-    console.log(clickedLettersRight)
-}
+    // console.log(wordContainer);
+    for (let i = 0; i < chosenWord.length; i++) {
+      for (j = 0; j < chosenWord.length; j++) {
+        if (i !== j) {
+          if (chosenWord[i] == chosenWord[j]){
+                  repeatedIndexes.push(i);
+                  console.log(repeatedIndexes);
+          }
+        }
+      }  
+    }
+  }
+  console.log(clickedLettersRight);
 }
 
 function letterClick(letter) {
   if (chosenWord.includes(letter)) {
       let letterIndex = chosenWord.indexOf(letter);
-      // let lastLetterIndex = chosenWord.indexOf(letter, letterIndex);
-      document.getElementById(`letter-${letterIndex}`).innerText = letter
-      // document.getElementById(`letter-${lastLetterIndex}`).innerText = letter
-      clickedLettersRight.push(letter)
-      if (clickedLettersRight.length == chosenWord.length) {
-        animals.splice(rng, 1)
-        if (animals.length == 0) {
-          window.location.href = "/Win page/win.html"
+      if (repeatedIndexes.includes(letterIndex)) {
+        for (let i = 0; i < repeatedIndexes.length; i++) {
+          document.getElementById(`letter-${repeatedIndexes[i]}`).innerText = letter;
+          clickedLettersRight.push(chosenWord[repeatedIndexes[i]]);
         }
-        console.log(animals)
-        reset()
+      } else {
+        letterIndex = chosenWord.indexOf(letter);
+        document.getElementById(`letter-${letterIndex}`).innerText = letter;
+        clickedLettersRight.push(letter);
+        }
+      console.log(clickedLettersRight);
+      if (clickedLettersRight.length == chosenWord.length) {
+        animals.splice(rng, 1); 
+        if (animals.length == 0) {
+          window.location.href = "/Win page/win.html";
+        }
+        console.log(animals);
+        reset();
       }
   } else {
-    clickedLettersWrong.push(letter)
+    clickedLettersWrong.push(letter);
     switch (clickedLettersWrong.length) {
       case 1:
         document.getElementById("head").style.display = "block";
@@ -65,12 +93,11 @@ function letterClick(letter) {
       break;
       case 6:
         document.getElementById("leftLeg").style.display = "block";
-        gameOver()
+        gameOver();
     }
-  }
+    }
 }
 
 function gameOver() {
-  window.location.href = "/Game Over/gameover.html"
+  window.location.href = "/Game Over/gameover.html";
 }
-
